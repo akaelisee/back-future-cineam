@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<!-- Head -->
+<%- include('./partials/head.ejs'); %>
+<!-- End Head -->
+
+<body>
+    <div class="app">
+        <div class="layout">
+            <!-- Side Nav START -->
+            <%- include('./partials/sidebar.ejs'); %>
+            <!-- Side Nav END -->
+
+            <!-- Page Container START -->
+            <div class="page-container">
+                <!-- Header START -->
+                <%- include('./partials/header.ejs'); %>
+                <!-- Header END -->
+
+                <!-- Content Wrapper START -->
+                <div class="main-content">
+                    <div class="container-fluid">
+                        <div class="container-fluid">
+                            <div class="page-title" style="position: relative;">
+                                <h4> Programmes </h4>
+                                <a href="/admin/account/add-programmes" class="btn btn-info btn-xs" style="position:absolute;right:0;top:0;">
+                                    <i class="fas fa-upload"></i>
+                                    <span style="font-size: 12px;"> Ajouter un Programme </span>
+                                </a>
+                            </div>
+                            <div class="row">
+                                <%- include('./includes/programme-table-inc.ejs'); %>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Content Wrapper END -->
+
+                <!-- Footer START -->
+                <%- include('./partials/footer.ejs'); %>
+                <!-- Footer END -->
+
+            </div>
+            <!-- Page Container END -->
+
+        </div>
+    </div>
+
+<%- include('./partials/script.ejs'); %>
+
+    <!-- page js -->
+
+</body>
+
+</html>

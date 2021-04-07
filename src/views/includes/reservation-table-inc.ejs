@@ -1,0 +1,78 @@
+<div class="col-md-12">
+    <div class="card">
+        <div class="card-block">
+        <% if (results) { %>
+            <div class="table-overflow">
+                <table id="dt-opt" class="table table-lg table-hover">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>#Id</th>
+                            <th>Place</th>
+                            <th>Nom</th>
+                            <th>Prenom</th>
+                            <th>Programme</th>
+                            <th>Actions</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% results.data.forEach(item => { %>
+                            <% if (item.idClient) { %>
+                                <tr>
+                                    <td style="padding-top: 10px ;">
+                                        <div class="checkbox mrg-left-20" >
+                                            <input id="task12" name="task12" type="checkbox" >
+                                            <label for="task12"></label>
+                                        </div>
+                                    </td>
+                                    <td style="padding-top: 22px;">
+                                        <div class="list-info mrg-top-10">
+                                            <div class="info" style="padding-left: 0;">
+                                                <span class="title pdd-left-0"><%= item.id %></span>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="relative mrg-top-15">
+                                            <span class="pdd-left-0"> <%= item.place %> </span>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="mrg-top-15">
+                                            <span class=""><%= item.lastname %></span>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="mrg-top-15">
+                                            <span class=""><%= item.firstname %></span>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="mrg-top-15">
+                                            <span class=""> <a href="/admin/account/detail-programme/<%= item.programme %>"> <%= item.programme %> </a> </span>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="mrg-top-10 text-left">
+                                            <a href="/admin/account/detail-reservation/<%= item.id %>" class="btn btn-icon btn-flat btn-rounded dropdown-toggle">
+                                                <i class="fas fa-eye"></i>
+                                            </a>
+                                            <a href="/admin/account/delete-reservation/<%= item.id %>" class="btn btn-icon btn-flat btn-rounded dropdown-toggle">
+                                                <i class="fas fa-trash-alt"></i>
+                                            </a>
+                                        </div>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                            <% } %>
+                        <% }) %>
+                    </tbody>
+                </table>
+            </div>
+            <% } else { %>
+                <div> Pas de Reservations </div>
+        <% } %>
+        </div>
+    </div>
+</div>

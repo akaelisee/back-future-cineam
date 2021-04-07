@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+
+<!-- Head -->
+<%- include('./partials/head.ejs'); %>
+<!-- End Head -->
+
+<body>
+    <div class="app">
+        <div class="layout">
+            <!-- Side Nav START -->
+            <%- include('./partials/sidebar.ejs'); %>
+            <!-- Side Nav END -->
+
+            <!-- Page Container START -->
+            <div class="page-container">
+                <!-- Header START -->
+                <%- include('./partials/header.ejs'); %>
+                <!-- Header END -->
+
+                <!-- Content Wrapper START -->
+                <div class="main-content">
+                    <div class="container-fluid">
+                        <div class="container-fluid">
+                            <div class="page-title" style="position: relative;">
+                                <h4> <%= movies.id_movie ? 'Modifier le film' : 'Nouveau film' %> </h4>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="card">
+                                        <form action="/admin/account/add-movies" method="POST" enctype="multipart/form-data" role="form">
+                                            <div class="card-block">
+                                                <div class="row">
+                                                    <div class="form-group" style="margin-bottom: 100px;">
+                                                        <label for="form-1-1" class="col-md-12 control-label">Titre du film</label>
+                                                        <div class="col-md-12">
+                                                            <input class="form-control" id="form-1-1" name="title" placeholder="Titre du film" type="text" value="<%= movies.title ? (movies.title) : '' %>" required>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group" style="margin-bottom:200px;">
+                                                        <label for="form-1-1" class="col-md-12 control-label">Genre de film</label>
+                                                        <div class="col-md-12">
+                                                            <select class="form-control input-lg" name="id_genre">
+                                                                <% results.forEach((result) => {%>
+                                                                    <option  value="<%= result.id %>" selected="<%= movies ? (movies.id_genre) : '' %>"><%= result.genre %></option>
+                                                                <% }); %>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group" style="margin-bottom:300px;">
+                                                        <label for="form-1-1" class="col-md-12 control-label">Affiche du film</label>
+                                                        <div class="col-md-12">
+                                                            <input type="file" class="form-control input-lg" name="poster_path" value="<%= movies ? (movies.poster_path) : '' %>">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group" style="margin-bottom:400px;">
+                                                        <label for="form-1-1" class="col-md-12 control-label">Fond du film</label>
+                                                        <div class="col-md-12">
+                                                            <input type="file" class="form-control input-lg" name="backdrop_path" value="<%= movies ? (movies.backdrop_path) : '' %>">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group" style="margin-bottom: 500px;">
+                                                        <label for="form-1-1" class="col-md-12 control-label">Durée du film</label>
+                                                        <div class="col-md-12">
+                                                            <input class="form-control" id="form-1-1" name="time" placeholder="Durée" type="text" value="<%= movies ? (movies.time) : '' %>" required>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group date" style="margin-bottom:390px;" hidden>
+                                                        <label for="form-1-1" class="col-md-12 control-label">Date</label>
+                                                        <div class="col-md-12">
+                                                            <input class="form-control" id="form-1-1" id="release_date" type="text" name="release_date">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group" style="margin-bottom: 400px;">
+                                                        <label for="form-1-1" class="col-md-12 control-label">Description du film</label>
+                                                        <div class="col-md-12">
+                                                            <textarea class="form-control" id="form-1-1" name="overview" placeholder="Description" value="" required><%= movies.overview ? (movies.overview) : '' %></textarea>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="card-footer border top">
+                                                <div class="row">
+                                                    <div class="col-md-12">
+                                                        <button class="btn btn-success" id="saveinfo"><%= movies.id_movie ? 'Modifier' : 'Enregistrer' %></button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Content Wrapper END -->
+
+                <!-- Footer START -->
+                <%- include('./partials/footer.ejs'); %>
+                <!-- Footer END -->
+
+            </div>
+            <!-- Page Container END -->
+
+        </div>
+    </div>
+
+    <%- include('./partials/script.ejs'); %>
+<script>
+    $(function() {
+        if ("<%= alert %>" === "true") {
+            console.log('bien');
+            swal({
+                title: "Succes",
+                text: "<%= movies ? 'Film bien modifié !' : 'Film bien enregistré' %>",
+                icon: "success",
+            });
+            setInterval(() => {
+                window.location.pathname = '/admin/account/movies'
+            }, 1500);
+        }
+        
+        let date = new Date();
+        let dateString = date.toISOString();
+
+        $('.date input:text').val(dateString);
+    })
+</script>
+    <!-- page js -->
+
+</body>
+
+</html>

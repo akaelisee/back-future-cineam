@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<!-- Head -->
+<%- include('./partials/head.ejs'); %>
+<!-- End Head -->
+
+<body>
+    <div class="app">
+        <div class="authentication">
+            <div class="sign-in">
+                <div class="row no-mrg-horizon">
+                    <div class="col-md-8 no-pdd-horizon hidden-xs">
+                        <div class="full-height bg" style="background-image: url('../../public/assets/images/others/img-29.jpg')">
+                            <div class="img-caption">
+                                <h1 class="caption-title" style="color: #aaa;">Future Cinema</h1>
+                                <p class="caption-text" style="color: #aaa;">Vivons tous pour le cinema</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 no-pdd-horizon">
+                        <div class="full-height bg-white height-100">
+                            <div class="vertical-align full-height pdd-horizon-70">
+                                <div class="table-cell">
+                                    <div class="pdd-horizon-15">
+                                        <h2>Login</h2>
+                                        <p class="mrg-btm-15 font-size-13">Entrez votre login et vote mot de passe.</p>
+                                        <form action="/admin/auth" method="POST">
+                                            <div class="form-group">
+                                                <input type="text" class="form-control" name="username" placeholder="Nom utilisateur">
+                                            </div>
+                                            <p> <%= message  %>  </p>
+                                            <div class="form-group">
+                                                <input type="password" class="form-control" name="password" placeholder="Mot de passe">
+                                            </div>
+                                            <button class="btn btn-info">Login</button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="login-footer">
+                                <img class="img-responsive inline-block" src="../../public/assets/images/logo-blue.png" width="100" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../../public/assets/js/vendor.js"></script>
+
+    <script src="../../public/assets/js/app.min.js"></script>
+
+    <!-- page js -->
+
+</body>
+
+</html>

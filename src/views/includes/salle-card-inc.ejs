@@ -1,0 +1,38 @@
+<% if (results.length) { %>
+    <% results.results.forEach(result => { %>
+        <div class="col-lg-4">
+            <div href="#" class="card">
+                <div class="card-header">
+                    <div class="pdd-vertical-10 pdd-horizon-20">
+                        <div class="info">
+                            <h2 class="title"><%= result.title %></h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-media mrg-left-20">
+                    <span> Nombre de place :  </span>
+                    <h3 class="" style="margin: 2px 0;"> <%= result.nombre %></h3>
+                </div>
+                <div class="card-media mrg-left-20 mrg-top-20">
+                    <span> Place Vip :  </span>
+                </div>
+                <div class="card-footer border top mrg-top-20"">
+                    <ul class="list-unstyled list-inline pull-right">
+                        <li class="list-inline-item">
+                            <a href="/admin/account/edit-salle/<%= result.id %>" class="btn btn-icon btn-flat btn-rounded agencydelter">
+                                <i class="fas fa-pen"></i>
+                            </a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a href="/admin/account/delete-salle/<%= result.id %>" class="btn btn-icon btn-flat btn-rounded agencydelter">
+                                <i class="fas fa-trash"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    <% }) %> 
+    <% } else { %>
+     <p> Pas de films actuellement </p>
+<% } %>

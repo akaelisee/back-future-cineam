@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+
+<!-- Head -->
+<%- include('./partials/head.ejs'); %>
+<!-- End Head -->
+
+<body>
+    <div class="app">
+        <div class="layout">
+            <!-- Side Nav START -->
+            <%- include('./partials/sidebar.ejs'); %>
+            <!-- Side Nav END -->
+
+            <!-- Page Container START -->
+            <div class="page-container">
+                <!-- Header START -->
+                <%- include('./partials/header.ejs'); %>
+                <!-- Header END -->
+
+                <!-- Content Wrapper START -->
+                <div class="main-content">
+                    <div class="container-fluid">
+                        <div class="container-fluid">
+                            <div class="page-title" style="position: relative;">
+                                <h4> <%= programme ? 'Modifier le programme' : 'Nouveau Programme' %> </h4>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="card">
+                                        <form action="<%= programme ? 'update-programme' : 'add-programmes' %>" method="POST" enctype="multipart/form-data" role="form">
+                                            <div class="card-block">
+                                                <div class="row">
+                                                    <div class="form-group" style="margin-bottom: 270px;" hidden>
+                                                        <label for="form-1-1" class="col-md-12 control-label">Prix</label>
+                                                        <div class="col-md-12">
+                                                            <input class="form-control" id="form-1-1" name="id_program" type="text" value="<%= programme ? (programme.id_program) : '' %>">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group" style="margin-bottom:90px;">
+                                                        <label for="form-1-1" class="col-md-12 control-label">Film</label>
+                                                        <div class="col-md-12">
+                                                            <select class="form-control input-lg" name="id_movie">
+                                                                <% results.movies.forEach((movie) => {%>
+                                                                    <option  value="<%= movie.id %>"><%= movie.title %></option>
+                                                                <% }); %>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group" style="margin-bottom:180px;">
+                                                        <label for="form-1-1" class="col-md-12 control-label">Salle</label>
+                                                        <div class="col-md-12">
+                                                            <select class="form-control input-lg" name="id_salle">
+                                                                <% results.salles.forEach((salle) => {%>
+                                                                    <option  value="<%= salle.id %>"><%= salle.title %></option>
+                                                                <% }); %>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group" style="margin-bottom: 270px;">
+                                                        <label for="form-1-1" class="col-md-12 control-label">Prix</label>
+                                                        <div class="col-md-12">
+                                                            <input class="form-control" id="form-1-1" name="price" placeholder="Prix" type="text" value="<%= programme ? (programme.price) : '' %>" required>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group" style="margin-bottom: 360px;">
+                                                        <label for="form-1-1" class="col-md-12 control-label">Prix vip</label>
+                                                        <div class="col-md-12">
+                                                            <input class="form-control" id="form-1-1" name="price_vip" placeholder="Prix vip" type="text" value="<%= programme ? (programme.price_vip) : '' %>" required>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group" style="margin-bottom:450px;">
+                                                        <label for="form-1-1" class="col-md-12 control-label">Date</label>
+                                                        <div class="col-md-12">
+                                                            <input class="form-control" id="form-1-1" type="date" name="date" value="<%= programme ? (programme.date) : '' %>">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group" style="margin-bottom:460px;">
+                                                        <label for="form-1-1" class="col-md-12 control-label">Heure</label>
+                                                        <div class="col-md-12">
+                                                            <input class="form-control" id="form-1-1" type="time" name="time_program" value="<%= programme ? (programme.time_program) : '' %>">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="card-footer border top">
+                                                <div class="row">
+                                                    <div class="col-md-12">
+                                                        <button class="btn btn-success" id="saveinfo"><%= programme ? 'Modifier' : 'Enregistrer' %></button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Content Wrapper END -->
+
+                <!-- Footer START -->
+                <%- include('./partials/footer.ejs'); %>
+                <!-- Footer END -->
+
+            </div>
+            <!-- Page Container END -->
+
+        </div>
+    </div>
+
+    <%- include('./partials/script.ejs'); %>
+<script>
+   $(function() {
+        if ("<%= alert %>" === "true") {
+            swal({
+                title: "Succes",
+                text: "<%= programme ? 'Programme modifié !' : 'Programme enregistré' %>",
+                icon: "success",
+            });
+            setInterval(() => {
+                window.location.pathname = '/admin/account/programmes'
+            }, 1500);
+        }else {
+            console.log('mal')
+        }        
+    })
+</script>
+    <!-- page js -->
+
+</body>
+
+</html>

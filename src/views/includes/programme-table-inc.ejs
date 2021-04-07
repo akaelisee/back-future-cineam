@@ -1,0 +1,85 @@
+<div class="col-md-12">
+    <div class="card">
+        <div class="card-block">
+        <% if (results) { %>
+            <div class="table-overflow">
+                <table id="dt-opt" class="table table-lg table-hover">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>#Id</th>
+                            <th>Film</th>
+                            <th>Salle</th>
+                            <th>prix</th>
+                            <th>prix vip</th>
+                            <th>Date</th>
+                            <th>Actions</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% results.results.forEach(item => { %>
+                            <tr>
+                                <td style="padding-top: 10px ;">
+                                    <div class="checkbox mrg-left-20" >
+                                        <input type="checkbox" >
+                                        <label for="task11"></label>
+                                    </div>
+                                </td>
+                                <td style="padding-top: 22px;">
+                                    <div class="list-info mrg-top-10">
+                                        <div class="info" style="padding-left: 0;">
+                                            <span class="title pdd-left-0"><%= item.id %></span>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="relative mrg-top-15">
+                                        <span class="pdd-left-0"> <%= item.movie %> </span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="mrg-top-15">
+                                        <span class=""><%= item.salle %></span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="mrg-top-15">
+                                        <span class=""><%= item.price %> euros</span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="mrg-top-15">
+                                        <span class=""><%= item.vip %> euros</span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="mrg-top-15">
+                                        <span><%= item.date %></span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="mrg-top-10 text-left">
+                                        <a href="/admin/account/detail-programme/<%= item.id %>" class="btn btn-icon btn-flat btn-rounded dropdown-toggle">
+                                            <i class="fas fa-eye"></i>
+                                        </a>
+                                        <a href="/admin/account/edit-programme/<%= item.id %>" class="btn btn-icon btn-flat btn-rounded dropdown-toggle">
+                                            <i class="fas fa-pen"></i>
+                                        </a>
+                                        <a href="/admin/account/delete-programme/<%= item.id %>" class="btn btn-icon btn-flat btn-rounded dropdown-toggle">
+                                            <i class="fas fa-trash-alt"></i>
+                                        </a>
+                                    </div>
+                                </td>
+                                <td></td>
+                            </tr>
+                        <% }) %>
+                    </tbody>
+                </table>
+            </div>
+            <% } else { %>
+                <div> Pas de Clients </div>
+        <% } %>
+        </div>
+    </div>
+</div>

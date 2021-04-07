@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+
+<!-- Head -->
+<%- include('./partials/head.ejs'); %>
+<!-- End Head -->
+
+<body>
+    <div class="app">
+        <div class="layout">
+            <!-- Side Nav START -->
+            <%- include('./partials/sidebar.ejs'); %>
+            <!-- Side Nav END -->
+
+            <!-- Page Container START -->
+            <div class="page-container">
+                <!-- Header START -->
+                <%- include('./partials/header.ejs'); %>
+                <!-- Header END -->
+
+                <!-- Content Wrapper START -->
+                <div class="main-content">
+                    <div class="container-fluid">
+                        <div class="container-fluid">
+                            <div class="page-title" style="position: relative;">
+                                <h4> Detail reservation </h4>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-7">
+                                    <div class="card">
+                                        <div class="card-block">
+                                            <% if (results) { %>
+                                                <h2> Resersation du client : <%= results.lastname %>&nbsp;<%= results.firstname %> </h2>
+                                                <div class="grid__detail">
+                                                    
+                                                    <div class="detail__block">
+                                                        <div class="detail__salle" style="margin-bottom: 15px;">
+                                                            <span> Numero place : </span>
+                                                            <h3 style="margin: 0;"> <%= results.place %> </h3>
+                                                        </div>
+
+                                                        <div class="detail__salle" style="margin-bottom: 15px;">
+                                                            <span> Nom et prenom : </span>
+                                                            <h3 style="margin: 0;"> <%= results.lastname %>&nbsp;<%= results.firstname %> </h3>
+                                                        </div>
+    
+                                                        <div class="detail__movie" style="margin-bottom: 15px;">
+                                                            <span> Salle: </span>
+                                                            <h3 style="margin: 0;">  <%= results.programme.lib_salle %> </h3>
+                                                        </div>
+
+                                                        <div class="detail__movie" style="margin-bottom: 15px;">
+                                                            <span> Titre du film: </span>
+                                                            <h3 style="margin: 0;">  <%= results.programme.title %> </h3>
+                                                        </div>
+    
+                                                        <div class="detail__movie" style="margin-bottom: 15px;">
+                                                            <span> Prix </span>
+                                                            <h3 style="margin: 0;">  <%= results.programme.price %> € </h3>
+                                                        </div>
+    
+                                                        <div class="detail__movie" style="margin-bottom: 15px;">
+                                                            <span> Prix Vip : </span>
+                                                            <h3 style="margin: 0;">  <%= results.programme.price_vip %> € </h3>
+                                                        </div>
+                                                        <div class="detail__movie" style="margin-bottom: 15px;">
+                                                            <span> Date de reservation : </span>
+                                                            <h3 style="margin: 0;">  <%= results.programme.date %> </h3>
+                                                        </div>
+                                                    </div>
+                                                </div>                     
+                                            <% } %>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-5">
+                                    <div class="card">
+                                        <div class="card-block">
+                                            <% if (results) { %>
+                                                <div class="grid__detail" > 
+                                                    <div class="image__block center" >
+                                                        <img style="width: 400px;" src="<%= results.programme.poster_path %>" alt="<%= results.price %>">
+                                                    </div>
+                                                </div>                    
+                                            <% } %>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Content Wrapper END -->
+
+                <!-- Footer START -->
+                <%- include('./partials/footer.ejs'); %>
+                <!-- Footer END -->
+
+            </div>
+            <!-- Page Container END -->
+
+        </div>
+    </div>
+
+<%- include('./partials/script.ejs'); %>
+
+    <!-- page js -->
+
+</body>
+
+</html>

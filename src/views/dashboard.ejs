@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+
+<!-- Head -->
+<%- include('./partials/head.ejs'); %>
+<!-- End Head -->
+
+<body>
+    <div class="app">
+        <div class="layout">
+            <!-- Side Nav START -->
+            <%- include('./partials/sidebar.ejs'); %>
+            <!-- Side Nav END -->
+
+            <!-- Page Container START -->
+            <div class="page-container">
+                <!-- Header START -->
+                    <%- include('./partials/header.ejs'); %>
+                <!-- Header END -->
+
+                <!-- Content Wrapper START -->
+                <div class="main-content">
+                    <div class="container-fluid">
+                        
+                        <div class="page-title" style="position: relative;">
+                            <h4> Accueil </h4>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-4">
+                                <div href="#" class="card">
+                                    <div class="card-media mrg-left-20">
+                                        <h3> Nombre de salle </h3>
+                                        <h3 class="" style="margin: 2px 0;"> </h3>
+                                    </div>
+                                    <div class="card-media mrg-left-20 mrg-top-20">
+                                        <h4> <%= salle.length %>   </h4>
+                                        <p class="" style="margin: 10px 0 20px 0;" > Future Cinema </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4">
+                                <div href="#" class="card">
+                                    <div class="card-media mrg-left-20">
+                                        <h3> Programmes </h3>
+                                        <h3 class="" style="margin: 2px 0;"> </h3>
+                                    </div>
+                                    <div class="card-media mrg-left-20 mrg-top-20">
+                                        <h4> <%= programme.length %>   </h4>
+                                        <p class="" style="margin: 10px 0 20px 0;" > Future Cinema </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4">
+                                <div href="#" class="card">
+                                    <div class="card-media mrg-left-20">
+                                        <h3> Reservations </h3>
+                                        <h3 class="" style="margin: 2px 0;"> </h3>
+                                    </div>
+                                    <div class="card-media mrg-left-20 mrg-top-20">
+                                        <h4> <%= reservation.length %>   </h4>
+                                        <p class="" style="margin: 10px 0 20px 0;" > Future Cinema </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="card bg-default">
+                                    <div class="card-block">
+                                        <div class="card">
+                                            <div class="card-heading">
+                                                <h4 class="card-title inline-block pdd-top-0">Utilisateurs</h4>
+                                            </div>
+                                            <div class="pdd-horizon-0 pdd-vertical-0">
+                                                <div class="relative">
+                                                    <table class="table table-lg table-hover">
+                                                        <tbody>
+                                                            <% user.forEach(item => { %>
+                                                                <tr>
+                                                                    <td>
+                                                                        <div class="list-info">
+                                                                            <img class="thumb-img" src="../../public/files/images/images.png" alt="">
+                                                                            <div class="info">
+                                                                                <span class="title"><%= item.username  %> </span>
+                                                                                <span class="sub-title">admin@future.fr</span>
+                                                                            </div>
+                                                                        </div>
+                                                                    </td>
+                                                                    <td>
+                                                                        <div class="relative mrg-top-10">
+                                                                            <span class="status online"> </span>
+                                                                        </div>
+                                                                    </td>
+                                                                </tr>
+                                                            <% }) %>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Content Wrapper END -->
+
+                <!-- Footer START -->
+                    <%- include('./partials/footer.ejs'); %>
+                <!-- Footer END -->
+
+            </div>
+            <!-- Page Container END -->
+
+        </div>
+    </div>
+
+<%- include('./partials/script.ejs'); %>
+ 
+</body>
+
+</html>

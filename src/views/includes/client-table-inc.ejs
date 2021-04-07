@@ -1,0 +1,63 @@
+<div class="col-md-12">
+    <div class="card">
+        <div class="card-block">
+        <% if (results) { %>
+            <div class="table-overflow">
+                <table id="dt-opt" class="table table-lg table-hover">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>Prenom</th>
+                            <th></th>
+                            <th>Nom</th>
+                            <th></th>
+                            <th>Email</th>
+                            <th>Actions</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% results.data.forEach(item => { %>
+                            <tr>
+                                <td style="padding-top: 10px ;">
+                                    <div class="checkbox mrg-left-20" >
+                                        <input id="task12" name="task12" type="checkbox" >
+                                        <label for="task12"></label>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="mrg-top-15">
+                                        <span class=""><%= item.firstname %></span>
+                                    </div>
+                                </td>
+                                <td></td>
+                                <td>
+                                    <div class="mrg-top-15">
+                                        <span class=""><%= item.lastname %></span>
+                                    </div>
+                                </td>
+                                <td></td>
+                                <td>
+                                    <div class="mrg-top-15">
+                                        <span><%= item.email %></span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="mrg-top-10 text-left">
+                                        <a href="/admin/account/delete-client/<%= item.id %>" class="btn btn-icon btn-flat btn-rounded dropdown-toggle">
+                                            <i class="fas fa-trash-alt"></i>
+                                        </a>
+                                    </div>
+                                </td>
+                                <td></td>
+                            </tr>
+                        <% }) %>
+                    </tbody>
+                </table>
+            </div>
+            <% } else { %>
+                <div> Pas de Clients </div>
+        <% } %>
+        </div>
+    </div>
+</div>

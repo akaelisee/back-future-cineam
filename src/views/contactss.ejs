@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html>
+
+<!-- Head -->
+<%- include('./partials/head.ejs'); %>
+<!-- End Head -->
+
+<body>
+    <div class="app">
+        <div class="layout">
+            <!-- Side Nav START -->
+            <%- include('./partials/sidebar.ejs'); %>
+            <!-- Side Nav END -->
+
+            <!-- Page Container START -->
+            <div class="page-container">
+                <!-- Header START -->
+                <%- include('./partials/header.ejs'); %>
+                <!-- Header END -->
+
+                <!-- Content Wrapper START -->
+                <div class="main-content">
+                    <div class="full-container">
+                        <div class="email-app">
+                            <div class="sec-side-nav">
+                                <div class="side-nav-inner">
+                                    <a href="email-compose.html" class="btn btn-info btn-block">Compose</a>
+                                    <ul>
+                                        <li>
+                                            <a href="email.html">
+                                                <i class="ti-email"></i>
+                                                <span>Inbox</span>
+                                                <span class="label label-primary">18</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="email.html">
+                                                <i class="ti-star"></i>
+                                                <span>Starred</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="email.html">
+                                                <i class="ti-share"></i>
+                                                <span>Sent</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="email.html">
+                                                <i class="ti-file"></i>
+                                                <span>Draft</span>
+                                                <span class="label label-danger">2</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="email.html">
+                                                <i class="ti-alert"></i>
+                                                <span>Spam</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="email.html">
+                                                <i class="ti-trash"></i>
+                                                <span>Deleted</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="email.html">
+                                                <i class="ti-settings"></i>
+                                                <span>Setting</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="email-wrapper row">
+                                <div class="email-list">
+                                    <div class="email-list-tools">
+                                        <ul class="tools pull-left">
+                                            <li class="d-lg-none">
+                                                <a class="side-nav-2-toggle" href="javascript:void(0)">
+                                                    <i class="ti-menu"></i>
+                                                </a>
+                                            </li> 
+                                           <li>
+                                                <a href="email.html">
+                                                    <span class="font-size-14">Mark as Read</span>
+                                                </a>
+                                            </li> 
+                                        </ul>
+                                        <ul class="tools text-right">
+                                            <li>
+                                                <a href="email.html">
+                                                    <i class="ti-star"></i>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="email.html">
+                                                    <i class="ti-timer"></i>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="email.html">
+                                                    <i class="ti-trash"></i>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="email-list-wrapper scrollable">
+                                        <div class="list-view-group-container">
+                                            <ul class="email-list-item">
+                                                <li class="email-item">
+                                                    <div class="email-tick">
+                                                        <div class="checkbox"> 
+                                                            <input type="checkbox" id="email-1" name="email-1"> 
+                                                            <label for="email-1"></label> 
+                                                        </div> 
+                                                    </div> 
+                                                    <div class="open-mail"> 
+                                                        <div class="email-detail"> 
+                                                            <p class="from">Droopy McCool</p> 
+                                                            <p class="subject">
+                                                               Bring me Solo and th...
+                                                            </p> 
+                                                            <p class=""> 
+                                                                 Hi, LukeSomebody's coming. Oh!...
+                                                            </p> 
+                                                            <span class="datetime">8 min ago</span>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                                <li class="email-item"> 
+                                                    <div class="email-tick">
+                                                        <div class="checkbox"> 
+                                                            <input type="checkbox" id="email-2"> 
+                                                            <label for="email-2"></label> 
+                                                        </div> 
+                                                    </div>
+                                                    <div class="open-mail">
+                                                        <div class="email-detail"> 
+                                                            <p class="from">Lady Valarian</p> 
+                                                            <p class="subject">
+                                                                I think you'll fit i ...
+                                                            </p> 
+                                                            <p class=""> 
+                                                                Hello LukeIf I don't make it b...
+                                                            </p> 
+                                                            <span class="datetime">17 min ago</span>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                                <li class="email-item"> 
+                                                       <div class="email-tick">
+                                                        <div class="checkbox"> 
+                                                            <input type="checkbox" id="email-3"> 
+                                                            <label for="email-3"></label> 
+                                                        </div> 
+                                                    </div>
+                                                    <div class="open-mail"> 
+                                                        <div class="email-detail"> 
+                                                            <p class="from">Garindan</p> 
+                                                            <p class="subject">
+                                                               That face you make...
+                                                            </p> 
+                                                            <p class=""> 
+                                                                Hi LukeGood luck. You're gonna...
+                                                            </p> 
+                                                            <span class="datetime">48 min ago</span>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                                <li class="email-item">
+                                                    <div class="email-tick">
+                                                        <div class="checkbox"> 
+                                                            <input type="checkbox" id="email-4"> 
+                                                            <label for="email-4"></label> 
+                                                        </div> 
+                                                    </div> 
+                                                    <div class="open-mail">
+                                                        <div class="email-detail"> 
+                                                            <p class="from">Nomi Sunrider</p> 
+                                                            <p class="subject">
+                                                               Rouge Group
+                                                            </p> 
+                                                            <p class=""> 
+                                                                Dear LukeOh! Nice to see a fam...
+                                                            </p> 
+                                                            <span class="datetime">1 Hours ago</span>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                                <li class="email-item">
+                                                    <div class="email-tick">
+                                                        <div class="checkbox"> 
+                                                            <input type="checkbox" id="email-5"> 
+                                                            <label for="email-5"></label> 
+                                                        </div> 
+                                                    </div> 
+                                                    <div class="open-mail">
+                                                        <div class="email-detail"> 
+                                                            <p class="from">Grand Admiral Thrawn</p> 
+                                                            <p class="subject">
+                                                                Empire Strikes Back
+                                                            </p> 
+                                                            <p class=""> 
+                                                                Run! Yes. A Jedi's strength fl...
+                                                            </p> 
+                                                            <span class="datetime">Fri 8:40 AM</span>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                                <li class="email-item"> 
+                                                    <div class="email-tick">
+                                                        <div class="checkbox"> 
+                                                            <input type="checkbox" id="email-6"> 
+                                                            <label for="email-6"></label> 
+                                                        </div> 
+                                                    </div>
+                                                    <div class="open-mail">
+                                                        <div class="email-detail"> 
+                                                            <p class="from">Sy Snootles</p> 
+                                                            <p class="subject">
+                                                                Farewell
+                                                            </p> 
+                                                            <p class=""> 
+                                                                You have learned much, young o...
+                                                            </p> 
+                                                            <span class="datetime">Fri 7:51 AM</span>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                                <li class="email-item"> 
+                                                    <div class="email-tick">
+                                                        <div class="checkbox"> 
+                                                            <input type="checkbox" id="email-7"> 
+                                                            <label for="email-7"></label> 
+                                                        </div> 
+                                                    </div>
+                                                    <div class="open-mail"> 
+                                                        <div class="email-detail"> 
+                                                            <p class="from">Moruth Doole</p> 
+                                                            <p class="subject">
+                                                                Feeling all right, s...
+                                                            </p> 
+                                                            <p class=""> 
+                                                                Hi, LukeSomebody's coming. Oh!...
+                                                            </p> 
+                                                            <span class="datetime">Wed 11:27 PM</span>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                                <li class="email-item"> 
+                                                    <div class="email-tick">
+                                                        <div class="checkbox"> 
+                                                            <input type="checkbox" id="email-8"> 
+                                                            <label for="email-8"></label> 
+                                                        </div> 
+                                                    </div>
+                                                    <div class="open-mail"> 
+                                                        <div class="email-detail"> 
+                                                            <p class="from">Salla Zend</p> 
+                                                            <p class="subject">
+                                                                Leave that to me
+                                                            </p> 
+                                                            <p class=""> 
+                                                                Secure this area until the ale...
+                                                            </p> 
+                                                            <span class="datetime">Wed 9:19 PM</span>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                                <li class="email-item"> 
+                                                    <div class="email-tick">
+                                                        <div class="checkbox"> 
+                                                            <input type="checkbox" id="email-9"> 
+                                                            <label for="email-9"></label> 
+                                                        </div> 
+                                                    </div>
+                                                    <div class="open-mail">
+                                                        <div class="email-detail"> 
+                                                            <p class="from">Talon Karrde</p> 
+                                                            <p class="subject">
+                                                                What are you doing?
+                                                            </p> 
+                                                            <p class=""> 
+                                                                Run! Yes. A Jedi's strength fl...
+                                                            </p> 
+                                                            <span class="datetime">Wed 5:53 PM</span>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                                <li class="email-item"> 
+                                                    <div class="email-tick">
+                                                        <div class="checkbox"> 
+                                                            <input type="checkbox" id="email-10"> 
+                                                            <label for="email-10"></label> 
+                                                        </div> 
+                                                    </div>
+                                                    <div class="open-mail">
+                                                        <div class="email-detail"> 
+                                                            <p class="from">Teneniel Djo</p> 
+                                                            <p class="subject">
+                                                                Obi-Wan is here
+                                                            </p> 
+                                                            <p class=""> 
+                                                                Hi LukeGood luck. You're gonna...
+                                                            </p> 
+                                                            <span class="datetime">Tue 12:10 AM</span>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                                <li class="email-item"> 
+                                                    <div class="email-tick">
+                                                        <div class="checkbox"> 
+                                                            <input type="checkbox" id="email-11"> 
+                                                            <label for="email-11"></label> 
+                                                        </div> 
+                                                    </div>
+                                                    <div class="open-mail">
+                                                        <div class="email-detail"> 
+                                                            <p class="from">Cindel Towani</p> 
+                                                            <p class="subject">
+                                                                All flight trooper
+                                                            </p> 
+                                                            <p class=""> 
+                                                                You have learned much, young o...
+                                                            </p> 
+                                                            <span class="datetime">Tue 6:48 PM</span>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                                <li class="email-item"> 
+                                                    <div class="email-tick">
+                                                        <div class="checkbox"> 
+                                                            <input type="checkbox" id="email-12"> 
+                                                            <label for="email-12"></label> 
+                                                        </div> 
+                                                    </div>
+                                                    <div class="open-mail">
+                                                        <div class="email-detail"> 
+                                                            <p class="from">Mako Spince</p> 
+                                                            <p class="subject">
+                                                                The Force is with h...
+                                                            </p> 
+                                                            <p class=""> 
+                                                                Dear LukeOh! Nice to see a fam...
+                                                            </p> 
+                                                            <span class="datetime">Mon 05/06</span>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="email-content">
+                                    <div class="email-content-tools">
+                                        <ul>
+                                            <li>
+                                                <a class="back-to-mailbox" href="javascript:void(0)">
+                                                    <i class="ti-arrow-circle-left"></i>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                        <ul class="pull-right">
+                                            <li>
+                                                <a href="email.html">
+                                                    <i class="fa fa-reply"></i>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="email.html">
+                                                    <i class="ti-star"></i>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="email.html">
+                                                    <i class="ti-flag"></i>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="email.html">
+                                                    <i class="ti-more-alt"></i>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                     <div class="email-content-wrapper">
+                                        <div class="email-content-detail">
+                                            <div class="detail-head">
+                                                <ul class="list-unstyled list-info">
+                                                    <li>
+                                                        <div class="pdd-vertical-10 pdd-horizon-20">	
+                                                            <img class="thumb-img img-circle" alt="" src="assets/images/avatars/thumb-5.jpg">
+                                                            <div class="info">
+                                                                <span class="title font-size-16">Grand Admiral Thrawn</span>
+                                                                <span class="sub-title">
+                                                                    <span>To: lukeskywalker@gmail.com</span>
+                                                                </span>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                </ul>
+                                                <ul class="tools">
+                                                    <li class="font-size-13">Fri 8:40 AM</li>
+                                                    <li class="d-none d-md-inline-block">
+                                                        <a href="email.html">
+                                                            <i class="fa fa-reply"></i>
+                                                        </a>
+                                                    </li>
+                                                    <li class="d-none d-md-inline-block">
+                                                        <a href="email.html">
+                                                            <i class="ti-more-alt"></i>
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </div> 
+                                            <div class="detail-body">
+                                                <h4 class="">Empire Strikes Back</h4>
+                                                <div class="mrg-top-15">
+                                                    <p>
+                                                        Run! Yes. A Jedi's strength flows from the Force. But beware of the dark side. Anger...fear...aggression. The dark side of the Force are they. Easily they flow, quick to join you in a fight. If once you start down the dark path, forever will it dominate your destiny, consume you it will, as it did Obi-Wan's apprentice. Vader. Is the dark side stronger? No...no...no. Quicker, easier, more seductive. But how am I to know the good side from the bad? You will know. When you are calm, at peace. Passive. A Jedi uses the Force for knowledge and defense, never for attack. But tell me why I can't... No, no, there is no why. Nothing more will I teach you today. Clear your mind of questions. Mmm. Mmmmmm.
+                                                    </p>
+                                                    <p>
+                                                        Luke! Luke, don't - it's a trap! It's a trap! The Force is with you, young Skywalker. But you are not a Jedi yet.
+                                                    </p>
+                                                    <p>
+                                                        Alert all commands. Ready for the tractor beam. Artoo, come back at once! You haven't finished with me yet! You don't know how to fix the hyperdrive. Chewbacca can do it. I'm standing here in pieces, and you're having delusions of grandeur! Oh, you did it!
+                                                    </p>
+                                                    <p>
+                                                        What...what's going on? Turn around, Chewbacca, I can't see. Oh...they've encased him in carbonite. He should be quite well-protected - if he survives the freezing process, that is. Well, Calrissian, did he survive? Yes, he's alive. And in perfect hibernation. He's all yours bounty hunter. Reset the chamber for Skywalker. Skywalker has just landed, my lord. Good. See to it that he finds his way here. Calrissian, take the princess and the Wookiee to my ship. You said they'd be left in the city under my supervision. I am altering the deal. Pray I don't alter it any further.
+                                                    </p>
+                                                </div>
+                                            </div>    
+                                            <div class="detail-foot">
+                                                <ul class="attachments">
+                                                    <li>
+                                                        <a href="javascript:;">
+                                                            <div class="file-icon">
+                                                                  <i class="fa fa-file-pdf-o"></i> 
+                                                            </div>
+                                                            <div class="file-info">
+                                                                <span class="file-name ">Battle_Report.pdf</span>
+                                                                <span class="file-size "> 18Mb</span>
+                                                            </div>
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="javascript:;">
+                                                            <div class="file-icon">
+                                                                  <i class="fa fa-file-image-o"></i> 
+                                                            </div>
+                                                            <div class="file-info">
+                                                                <span class="file-name ">Image_1.jpg</span>
+                                                                <span class="file-size "> 172Kb</span>
+                                                            </div>
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>	
+                    </div>
+                </div>
+                <!-- Content Wrapper END -->
+
+                <!-- Footer START -->
+                <%- include('./partials/footer.ejs'); %>
+                <!-- Footer END -->
+
+            </div>
+            <!-- Page Container END -->
+
+        </div>
+    </div>
+
+<%- include('./partials/script.ejs'); %>
+
+    <!-- page js -->
+
+</body>
+
+</html>

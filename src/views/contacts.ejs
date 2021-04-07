@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+	<!-- Head -->
+	<%- include('./partials/head.ejs'); %>
+	<!-- End Head -->
+
+	<body>
+		<div class="app">
+			<div class="layout">
+				<!-- Side Nav START -->
+				<%- include('./partials/sidebar.ejs'); %>
+				<!-- Side Nav END -->
+
+				<!-- Page Container START -->
+				<div class="page-container">
+					<!-- Header START -->
+					<%- include('./partials/header.ejs'); %>
+					<!-- Header END -->
+
+					<!-- Content Wrapper START -->
+					<div class="main-content">
+						<div class="full-container">
+							<div class="email-app">
+								<div class="email-wrapper row">
+									<div class="email-list">
+									    <div class="email-list-tools">
+									        <ul class="tools pull-left">
+									            <li class="d-lg-none">
+									                <a class="side-nav-2-toggle" href="javascript:void(0)">
+									                    <i class="fas fa-bars"></i>
+									                </a>
+									            </li> 
+									           <li>
+									                <a href="#">
+									                    <span class="font-size-14">Les messages</span>
+									                </a>
+									            </li> 
+									        </ul>
+									        <ul class="tools text-right">
+									            <li>
+									                <a href="#">
+									                    <i class="fas fa-star"></i>
+									                </a>
+									            </li>
+									            <li>
+									                <a href="email.html">
+									                    <i class="fas fa-clock"></i>
+									                </a>
+									            </li>
+									            <li>
+									                <a href="/admin/account/delete-contact">
+									                    <i class="fas fa-trash-alt"></i>
+									                </a>
+									            </li>
+									        </ul>
+									    </div>
+									    <div class="email-list-wrapper scrollable">
+									        <div class="list-view-group-container">
+									            <ul class="email-list-item">
+													<% if (results) { %>
+														<% results.data.forEach(result => { %>
+															<a href="/admin/account/detail-contact/<%= result.id %>">
+																<li class="email-item">
+																	<div class="email-tick">
+																		<div class="checkbox"> 
+																			<input type="checkbox"> 
+																			<label for="email-1"></label> 
+																		</div> 
+																	</div> 
+																	<div class="open-mail"> 
+																		<div class="email-detail"> 
+																			<p class="from"> <%= result.name  %> </p> 
+																			<p class="subject">
+																			   Message à Cinema Future
+																			</p> 
+																			<p class=""> 
+																				<%= (result.message).substr(0, 25)  %> ...
+																			</p> 
+																		</div>
+																	</div>
+																</li>
+															</a>
+														<% }) %>
+													<% } %>
+									            </ul>
+									        </div>
+									    </div>
+									</div>
+									<div class="email-content">
+									     <div class="email-content-wrapper">
+											 <% if (message) { %>
+												<div class="email-content-detail">
+													<div class="detail-head">
+														<ul class="list-unstyled list-info">
+															<li>
+																<div class="pdd-vertical-10 pdd-horizon-20">	
+																	<img class="thumb-img img-circle" alt="" src="../../public/files/images/images.png">
+																	<div class="info">
+																		<span class="title font-size-16"> <%= message.name %> </span>
+																		<span class="sub-title">
+																			<span>To: Future Cinema </span>
+																		</span>
+																	</div>
+																</div>
+															</li>
+														</ul>
+														<ul class="tools">
+															<li class="font-size-13"><%= message.date %></li>
+															<li class="d-none d-md-inline-block">
+																<a href="email.html">
+																	<i class="fas fa-reply"></i>
+																</a>
+															</li>
+															<li class="d-none d-md-inline-block">
+																<a href="email.html">
+																	<i class="fas fa-ellipsis-h"></i>
+																</a>
+															</li>
+														</ul>
+													</div> 
+													<div class="detail-body">
+														<h4 class=""> <%= message.suject %></h4>
+														<div class="mrg-top-15">
+															<p>
+																<%= message.message %>
+															</p>
+														</div>
+													</div>
+												</div>
+											 <% } %>
+									    </div>
+									</div>
+								</div>
+							</div>	
+						</div>
+					</div>
+					<!-- Content Wrapper END -->
+
+					<!-- Footer START -->
+					<%- include('./partials/footer.ejs'); %>
+					<!-- Footer END -->
+
+				</div>
+				<!-- Page Container END -->
+
+			</div>
+		</div>
+
+		<%- include('./partials/script.ejs'); %>
+
+	</body>
+</html>

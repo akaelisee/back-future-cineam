@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+
+<!-- Head -->
+<%- include('./partials/head.ejs'); %>
+<!-- End Head -->
+
+<body>
+    <div class="app">
+        <div class="layout">
+            <!-- Side Nav START -->
+            <%- include('./partials/sidebar.ejs'); %>
+            <!-- Side Nav END -->
+
+            <!-- Page Container START -->
+            <div class="page-container">
+                <!-- Header START -->
+                <%- include('./partials/header.ejs'); %>
+                <!-- Header END -->
+
+                <!-- Content Wrapper START -->
+                <div class="main-content">
+                    <div class="container-fluid">
+                        <div class="container-fluid">
+                            <div class="page-title" style="position: relative;">
+                                <h4> <%= salle ? 'Modifier la salle' : 'Nouvelle salle' %> </h4>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="card">
+                                        <form action="<%= salle ? '/admin/account/update-salle' : '/admin/account/add-salles' %>" method="POST" enctype="multipart/form-data" role="form">
+                                            <div class="card-block">
+                                                <div class="row">
+                                                    <div class="form-group" style="margin-bottom: 270px;" hidden>
+                                                        <label for="form-1-1" class="col-md-12 control-label">Prix</label>
+                                                        <div class="col-md-12">
+                                                            <input class="form-control" id="form-1-1" name="id_salle" type="text" value="<%= salle ? (salle.id_salle) : '' %>">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group" style="margin-bottom: 90px;">
+                                                        <label for="form-1-1" class="col-md-12 control-label">Titre salle</label>
+                                                        <div class="col-md-12">
+                                                            <input class="form-control" id="form-1-1" name="lib_salle" placeholder="Titre" type="text" value="<%= salle ? (salle.lib_salle) : '' %>" required>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group" style="margin-bottom: 190px;">
+                                                        <label for="form-1-1" class="col-md-12 control-label">Nombre de place</label>
+                                                        <div class="col-md-12">
+                                                            <input class="form-control" id="form-1-1" name="nombre" placeholder="Nombre" type="text" value="<%= salle ? (salle.nombre) : '' %>" required>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group" style="margin-bottom:290px;">
+                                                        <label for="form-1-1" class="col-md-12 control-label">Place Vip</label>
+                                                        <div class="col-md-12">
+                                                            <input class="form-control" id="form-1-1" type="text" placeholder="1-1-1-1" name="place_vip" value="<%= salle ? (salle.place_vip) : '' %>">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="card-footer border top">
+                                                <div class="row">
+                                                    <div class="col-md-12">
+                                                        <button class="btn btn-success" id="saveinfo"><%= salle ? 'Modifier' : 'Enregistrer' %></button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Content Wrapper END -->
+
+                <!-- Footer START -->
+                <%- include('./partials/footer.ejs'); %>
+                <!-- Footer END -->
+
+            </div>
+            <!-- Page Container END -->
+
+        </div>
+    </div>
+
+    <%- include('./partials/script.ejs'); %>
+<script>
+   $(function() {
+        if ("<%= alert %>" === "true") {
+            swal({
+                title: "Succes",
+                text: "<%= salle ? 'salle modifié !' : 'salle enregistré' %>",
+                icon: "success",
+            });
+            setInterval(() => {
+                window.location.pathname = '/admin/account/salles'
+            }, 1500);
+        }else {
+            console.log('mal')
+        }        
+    })
+</script>
+    <!-- page js -->
+
+</body>
+
+</html>

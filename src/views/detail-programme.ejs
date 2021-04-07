@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+
+<!-- Head -->
+<%- include('./partials/head.ejs'); %>
+<!-- End Head -->
+
+<body>
+    <div class="app">
+        <div class="layout">
+            <!-- Side Nav START -->
+            <%- include('./partials/sidebar.ejs'); %>
+            <!-- Side Nav END -->
+
+            <!-- Page Container START -->
+            <div class="page-container">
+                <!-- Header START -->
+                <%- include('./partials/header.ejs'); %>
+                <!-- Header END -->
+
+                <!-- Content Wrapper START -->
+                <div class="main-content">
+                    <div class="container-fluid">
+                        <div class="container-fluid">
+                            <div class="page-title" style="position: relative;">
+                                <h4> Detail du programme </h4>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-7">
+                                    <div class="card">
+                                        <div class="card-block">
+                                            <% if (results) { %>
+                                                <div class="grid__detail">
+                                                    <div class="detail__block">
+                                                        <div class="detail__salle" style="margin-bottom: 20px;">
+                                                            <span> Salle : </span>
+                                                            <h3 style="margin: 0;"> <%= results.lib_salle %> </h3>
+                                                        </div>
+    
+                                                        <div class="detail__movie" style="margin-bottom: 20px;">
+                                                            <span> Titre du film : </span>
+                                                            <h3 style="margin: 0;">  <%= results.title %> </h3>
+                                                        </div>
+
+                                                        <div class="detail__movie" style="margin-bottom: 20px;">
+                                                            <span> Durée du film : </span>
+                                                            <h3 style="margin: 0;">  <%= results.time %> </h3>
+                                                        </div>
+    
+                                                        <div class="detail__movie" style="margin-bottom: 20px;">
+                                                            <span> Prix standard : </span>
+                                                            <h3 style="margin: 0;">  <%= results.price %> € </h3>
+                                                        </div>
+    
+                                                        <div class="detail__movie" style="margin-bottom: 20px;">
+                                                            <span> Prix Vip : </span>
+                                                            <h3 style="margin: 0;">  <%= results.price_vip %> € </h3>
+                                                        </div>
+                                                        <div class="detail__movie" style="margin-bottom: 20px;">
+                                                            <span> Date et heure du programme : </span>
+                                                            <h3 style="margin: 0;">  <%= results.date %> à  <%= results.time_program %></h3>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                    
+                                                <div class="description" style="margin-top: 25px;">
+                                                    <span> Description : </span>
+                                                    <h4> <%= results.overview %> </h4>
+                                                </div>                     
+                                            <% } %>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="card">
+                                        <div class="card-block">
+                                            <% if (results) { %>
+                                                <div class="grid__detail">
+                                                    <div class="image__block">
+                                                        <img style="width: 100%;" src="<%= results.poster_path %>" alt="<%= results.title %>">
+                                                    </div>
+                                                </div>                    
+                                            <% } %>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Content Wrapper END -->
+
+                <!-- Footer START -->
+                <%- include('./partials/footer.ejs'); %>
+                <!-- Footer END -->
+
+            </div>
+            <!-- Page Container END -->
+
+        </div>
+    </div>
+
+<%- include('./partials/script.ejs'); %>
+
+    <!-- page js -->
+
+</body>
+
+</html>
