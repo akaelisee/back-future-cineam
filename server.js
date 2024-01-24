@@ -26,7 +26,7 @@ app.use(fileUpload({useTempFiles: true}));
 
 app.use('/', apiRouter);
 
-const port = process.env.PORT || 4000;
+const port = process.env.PORT || 3306;
 app.listen(port, function() {
     console.log('Server lauched on ' + port );
 });
